@@ -1,0 +1,10 @@
+pandas 
+sklearn
+gensim 
+nltk
+tqdm
+pyenchant
+Django
+gunicorn 
+python-Levenshtein
+pattern
