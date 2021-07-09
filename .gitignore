@@ -8,6 +8,7 @@ venv/
 db.sqlite3
 # C extensions
 *.so
+venv/
 
 # Distribution / packaging
 .Python

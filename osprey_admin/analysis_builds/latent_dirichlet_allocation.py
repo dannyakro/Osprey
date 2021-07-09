@@ -25,6 +25,9 @@ warnings.filterwarnings("ignore", category = DeprecationWarning)
 ### Removal of stopwords from set is much faster than from list 
 stopwords = set(pd.read_csv(stopwords_path).stopwords)
 
+nltk.download("punkt")
+nltk.download("wordnet")
+
 def LDA(dataframe, 
         column_to_size: str = "post_content",
         column_ids: str = "post_id",
