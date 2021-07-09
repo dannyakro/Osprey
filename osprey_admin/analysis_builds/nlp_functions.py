@@ -1,22 +1,15 @@
 import pandas as pd 
 import numpy as np 
 import sklearn
-from sklearn.feature_extraction.text import TfidfVectorizer
-
-from tqdm import tqdm
-tqdm.pandas()
 
 from gensim.models import TfidfModel
 from gensim.corpora import Dictionary
 from gensim.utils import simple_preprocess
 
 import os 
-import enchant 
-import string 
 import collections
 
 import nltk
-from nltk.tokenize import WordPunctTokenizer
 from nltk.collocations import BigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
 

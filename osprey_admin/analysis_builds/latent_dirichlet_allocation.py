@@ -1,5 +1,3 @@
-import pickle 
-
 import gensim
 import gensim.corpora as corpora
 from gensim.utils import simple_preprocess
@@ -19,11 +17,6 @@ from scipy.spatial import distance
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import MinMaxScaler
 
-import unidecode
-
-from nltk.stem import WordNetLemmatizer
-from functools import lru_cache
-
 stopwords_path = os.path.join(settings.BASE_DIR,"analysis_builds/stopwords.csv")
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -31,10 +24,6 @@ warnings.filterwarnings("ignore", category = DeprecationWarning)
 
 ### Removal of stopwords from set is much faster than from list 
 stopwords = set(pd.read_csv(stopwords_path).stopwords)
-
-### Cache the lemmatized words for faster lemmatization
-wnl = WordNetLemmatizer()
-lemmatize = lru_cache(maxsize=50000)(wnl.lemmatize)
 
 def LDA(dataframe, 
         column_to_size: str = "post_content",
