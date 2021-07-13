@@ -61,7 +61,7 @@ def LDA(dataframe,
     papers['cleaned_sentence'] = papers['cleaned_sentence'].str.replace('\n', ' // ').str.replace('\t','').str.replace('\r','')
     ### Data Processing 
     # Tokenization, lemmatization, url, number and stopword removal 
-    papers['tokenized_words'] = papers['cleaned_sentence'].apply(lambda x: [lemmatize(i, pos ="v") for i in nltk.word_tokenize(x) if i not in stopwords and "https" not in i and not i.isdigit()])
+    papers['tokenized_words'] = papers['cleaned_sentence'].apply(lambda x: [i for i in nltk.word_tokenize(x) if i not in stopwords and "https" not in i and not i.isdigit()])
 
     data_words = papers['tokenized_words'].values.tolist()
 
