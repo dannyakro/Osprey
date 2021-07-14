@@ -1,14 +1,17 @@
-# Byte-compiled / optimized / DLL files
-.ipynb_checkpoints
+# Dev environment
+*.vscode
+.jupyter
 .DS_Store
+*.ipynb
+.git
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
-venv/
 *.py[cod]
 *$py.class
-db.sqlite3
+
 # C extensions
 *.so
-venv/
 
 # Distribution / packaging
 .Python
@@ -141,4 +144,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-.idea/
+images/
