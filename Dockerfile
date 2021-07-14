@@ -18,4 +18,6 @@ RUN ["python", "manage.py", "makemigrations"]
 
 RUN ["python", "manage.py", "migrate"]
 
-ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN ["python", "manage.py", "collectstatic", "--noinput"]
+
+ENTRYPOINT ["uvicorn", "osprey_admin.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
