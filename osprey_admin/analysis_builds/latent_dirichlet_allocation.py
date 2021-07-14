@@ -72,8 +72,8 @@ def LDA(dataframe,
     
     # Train models via multithreading 
     # # https://radimrehurek.com/gensim/models/ldamulticore.html
-    ## Sets a random state to ensure reproducible results 
-    lda_model = gensim.models.LdaMulticore(corpus = corpus, id2word = id2word, num_topics = num_topics, passes = 5, random_state = np.random.RandomState(1234))
+    ## Sets a random state to ensure reproducible results
+    lda_model = gensim.models.ldamodel.LdaModel(corpus = corpus, id2word = id2word, num_topics = num_topics, passes = 5, random_state = np.random.RandomState(1234))
     
     # Return the topics that each document is tagged too and the probability scores for each of them 
     # Takes in a Bag Of Words

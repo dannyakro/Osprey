@@ -20,4 +20,4 @@ RUN ["python", "manage.py", "migrate"]
 
 RUN ["python", "manage.py", "collectstatic", "--noinput"]
 
-ENTRYPOINT ["uvicorn", "osprey_admin.asgi:application", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["gunicorn", "osprey_admin.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "-b" ,"0.0.0.0:8000"]
