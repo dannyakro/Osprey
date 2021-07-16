@@ -14,10 +14,7 @@ COPY . .
 
 WORKDIR "/osprey_admin"
 
-RUN ["python", "manage.py", "makemigrations"]
 
-RUN ["python", "manage.py", "migrate"]
-
-RUN ["python", "manage.py", "collectstatic", "--noinput"]
-
-ENTRYPOINT ["gunicorn", "osprey_admin.asgi:application", "-k", "uvicorn.workers.UvicornWorker", "-b" ,"0.0.0.0:8000"]
+COPY run_commands.sh /scripts/commands.sh
+RUN ["chmod", "+x", "/scripts/commands.sh"]
+ENTRYPOINT ["/scripts/commands.sh"]
