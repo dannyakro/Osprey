@@ -11,6 +11,14 @@ ingress:
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - synthesis'
   tls:
     secretName: this-is-synthesis
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 60
+  timeoutSeconds: 60
+readinessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 60
+  timeoutSeconds: 60
 nodeSelector:
   type: lda
 postgresql:
