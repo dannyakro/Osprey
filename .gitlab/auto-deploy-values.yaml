@@ -15,3 +15,10 @@ nodeSelector:
   type: lda
 postgresql:
   managed: false
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "250m"
+  limits:
+    memory: "4500Mi"
+    cpu: "1500m"
