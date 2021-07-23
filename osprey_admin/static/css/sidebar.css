@@ -87,7 +87,7 @@ input[type=text], select {
 }
 
 .help-tip-sidebar:before{
-    content:'?';
+    content:'!';
     font-weight: bold;
     color:#FFEDDE;
     overflow:visible;

@@ -88,7 +88,9 @@ def get_topwords(dataframe,
     assert(len(top50_all) == 50)
 
     bag_of_words = pd.concat([topwordsby_class[i].drop(columns = ['modularity_class']).rename(columns = {"counts":str(i)}) for i in range(num_topics)], axis = 1).reset_index()
+    bag_of_words = bag_of_words.rename(columns = {"index":"words"})
     bag_of_words = bag_of_words[bag_of_words.words.isin(top50_all.words)].fillna(0)
+
     top50_bymodclass = [bag_of_words[['words',str(i)]].rename(columns = {str(i):"counts"}) for i in range(num_topics)]
     
     return top50_all, top50_bymodclass, all_topwords
@@ -128,6 +130,9 @@ def get_tfidf_top_words(dataframe,
         data.append(modclass_df.set_index('word'))
     
     # Get the max tfidf score per column and corresponding modularity class, then merge the two
-    top_words_tfidf = pd.merge(pd.concat(data, axis = 1).max(axis = 1).reset_index().rename(columns = {0:"score"}), pd.concat(data, axis = 1).idxmax(axis = 1).reset_index().rename(columns = {0:"modularity_class"}), on = 'word', how = 'left')
+    df1 = pd.concat(data, axis = 1).max(axis = 1).reset_index().rename(columns = {0:"score", "index":"word"})
+    df2 = pd.concat(data, axis = 1).idxmax(axis = 1).reset_index().rename(columns = {0:"modularity_class", "index":"word"})
+
+    top_words_tfidf = pd.merge(df1, df2, on = 'word', how = 'left')
     top500_words_tfidf = top_words_tfidf.sort_values(["modularity_class","score"], ascending = False).groupby("modularity_class").head(500)
     return top500_words_tfidf
