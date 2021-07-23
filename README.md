@@ -3,10 +3,6 @@ LDA Topic Modelling Dashboard
 
 This repo aims to build on the work of ``Cornell jsLDA`` and ``pyLDAvis`` by providing some added functionalities to allow for better understanding of topics within a document corpus. 
 
-Most importantly, the main point of this project was to take a deep dive into learning Django, JS and HTML. [Enjoy!](https://www.youtube.com/watch?v=AX6UEe_1SYk) 
-
-![alt-text](images/media_file_1.gif)
-
 ## Getting Started
 
 The dashboard is currently not yet deployed or dockerized. For now, the instructions below are for running the dashboard on your local machine 
