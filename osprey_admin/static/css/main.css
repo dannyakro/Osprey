@@ -12,7 +12,7 @@
 }
 
 .help-tip:before{
-    content:'!';
+    content:'?';
     font-weight: bold;
     color:#FFEDDE;
     overflow:visible;
@@ -92,4 +92,4 @@
     background: #FF5028;
     color: #FFEDDE;
     font-size: 45;
-    }
+}

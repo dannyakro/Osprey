@@ -1,3 +1,32 @@
+.selectFile {
+    padding:5px 10px;
+    background:#FFDDC1;
+    border:1px solid #FFDDC1;
+    position:relative;
+    color: black;
+    font-weight: bold;
+    border-radius:2px;
+    font-family: sans-serif;
+    text-align:center;
+    cursor:pointer;
+}
+
+.hide_file {
+    position: absolute;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 100%;
+    font-size: 24px;
+    width: 100%;
+}
+
+.firstColumnName {
+    padding-top: 10px;
+}
+
 .slidecontainer {
     width: 100%;
   }
@@ -37,15 +66,15 @@ cursor: pointer;
 }
 
 input[type=text], select {
-    width: 180px;
+    width: 100%;
     height: 30px;
     border: none;
     margin-top: -30px;
-  }
+}
 
 .inputNames {
     float:left;
-    padding-top: 10px; 
+    padding-top: 15px; 
     font-weight: bold;
 }
 
@@ -53,6 +82,10 @@ input[type=text], select {
     float:right; 
     height:30px; 
     width:90px
+}
+
+.form-label {
+    font-weight: bold; 
 }
 
 .runModel {
@@ -65,98 +98,22 @@ input[type=text], select {
     border: none;
 }
 
-.form-label {
-    font-weight: bold; 
+.performance {
+    padding-top: 50px;
+    text-align: center
 }
 
-
-
-.help-tip-sidebar{
-    overflow: visible; 
-    float: left;
-    position: relative;
+.modelPerformance {
     text-align: center;
-    background-color: #FFBBAB;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    overflow: visible;
-    font-size: 14px;
-    line-height: 26px;
-    cursor: default;
-}
-
-.help-tip-sidebar:before{
-    content:'!';
     font-weight: bold;
-    color:#FFEDDE;
-    overflow:visible;
 }
 
-.help-tip-sidebar:hover p{
-    display:block;
-    transform-origin: 100% 0%;
-    overflow: visible;
-
-    -webkit-animation: fadeIn 0.3s ease-in-out;
-    animation: fadeIn 0.3s ease-in-out;
-
-}
-
-.help-tip-sidebar p{    /* The tooltip */
-    display: none;
-    text-align: center;
-    background-color: #1E2021;
-    padding: 15px;
-    width: 150px;
-    position: absolute;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    right: -4px;
-    overflow-x:visible;
-    overflow-y:visible;
-    color: #FFF;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-.help-tip-sidebar p:before{ /* The pointer of the tooltip */
-    position: absolute;
-    content: '';
-    width:0;
-    height: 0;
-    overflow: visible;
-    border:6px solid transparent;
-    border-bottom-color:#1E2021;
-    right:10px;
-    top:-12px;
-}
-
-.help-tip-sidebar p:after{ /* Prevents the tooltip from being hidden */
-    width:100%;
-    height:40px;
-    overflow: visible;
-    content:'';
-    position: absolute;
-    top:-40px;
-    left:0;
-}
-
-/* CSS animation */
-
-@-webkit-keyframes fadeIn {
-    0% { 
-        opacity:0; 
-        transform: scale(0.6);
-    }
-
-    100% {
-        opacity:100%;
-        transform: scale(1);
-    }
-}
-
-@keyframes fadeIn {
-    0% { opacity:0; }
-    100% { opacity:100%; }
+.download {
+    background-color: #FFDDC1; 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    border: none;
+    font-family: sans-serif;
+    font-weight: bold;
 }
